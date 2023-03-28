@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { useReducer } from 'react';
 import './App.css';
 
+const reducer = (state, action)  => {
+  if (action.type === 'buy ingredients') return {money: state.money - 10};
+  if (action.type === 'sell_a_meal') return {money: state.money + 10};
+  return state;
+}
+
+
 function App() {
+
+  const initialState = {money: 100};
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Wallet: {state.money}</h1>
+      <div>
+        <button onClick={() => dispatch({type: "buy ingredients"})}>Shopping for veggies!</button>
+        <button onClick={() => dispatch({type: "sell_a_meal"})}>Serve a meal to the customer</button>
+      </div>
     </div>
   );
 }
