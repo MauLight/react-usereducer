@@ -2,6 +2,7 @@ import { useReducer } from 'react';
 import './App.css';
 import { Calculate } from './components/calculate';
 import { Custom } from './components/custom';
+import { Reducer } from './components/usereducer';
 import { Focus } from './components/useref';
 import useConsoleLog from './useConsoleLog';
 
@@ -32,6 +33,7 @@ function App() {
       <Focus />
       <Custom />
       <Calculate />
+      <Reducer />
     </div>
   );
 }
