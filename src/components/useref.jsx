@@ -10,7 +10,7 @@ export const Focus = () => {
     return (
         <div>
             <h1>Using the useRef Hook!</h1>
-            <input type="text" ref={formInputRef} className="form-control" />
+            <input type="text" ref={formInputRef} className="form-control d-inline rounded-0" />
             <button onClick={focusInput} className="btn rounded-0 border">Focus!</button>
         </div>
     )

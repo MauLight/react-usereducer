@@ -28,3 +28,7 @@ code {
   background-color: #3F729B !important;
   color: white !important;
 }
+
+.form-control {
+  width: 300px !important;
+}

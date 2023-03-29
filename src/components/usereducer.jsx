@@ -29,14 +29,14 @@ export const Reducer = () => {
     };
 
     const handleChange = (e) => {
-        dispatch({type: 'changed_name', nextName: e.target.value});
+        dispatch({ type: 'changed_name', nextName: e.target.value });
     }
 
     return (
-        <div className="my-3">
+        <div className="my-3 mx-auto">
             <button onClick={handleClick} className="btn rounded-0 border my-2">Increment Age</button>
             <h5>Hello there {state.name}, you're {state.age} years old!</h5>
-            <input type="text" className="form-control" value={state.name} onChange={handleChange} />
+            <input type="text" className="form-control d-inline rounded-0" value={state.name} onChange={handleChange} />
         </div>
     )
 
